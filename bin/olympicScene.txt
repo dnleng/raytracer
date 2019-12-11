@@ -1,0 +1,124 @@
+/*
+ * Programming assignment 2, Graphics 2008/2009
+ * Custom planetary scene, cloud map is a separate sphere using transparency and refraction.
+ *
+ */
+
+// some basic settings
+width	600
+height	600
+maxReflectionDepth 6
+gamma 1.0
+antialiasing 2.0
+
+
+
+// ground plane
+plane {
+	normal < 0, 1, 0 >
+	offset 30
+
+	material {
+		perlin < 0.1, 0, 0 > < 1.1, 1.5, 0 >
+	}
+
+}
+
+
+// back wall
+plane {
+	normal < 0, 0, 1 >
+	offset 150
+
+
+	material {
+		perlin < 0.5, 0, 0 > < 1.2, 1.5, 0 >
+	}
+
+}
+
+
+//blue sphere
+sphere {
+
+	origin	< -30, 10, -55 >
+	radius	14
+
+	material {
+		ambient 0.5
+		diffuse 1
+		refractive 1.1
+	}
+
+}
+
+//yellow sphere
+sphere {
+
+	origin	< -14, -4, -55 >
+	radius	14
+
+	material {
+		ambient 0.5
+		diffuse 1
+		refractive 1.1
+	}
+
+}
+
+//black sphere
+sphere {
+
+	origin	< 0, 10, -55 >
+	radius	14
+
+	material {
+		ambient 0.5
+		diffuse 1
+		refractive 1.1
+	}
+
+}
+
+//green sphere
+sphere {
+
+	origin	< 14, -4, -55 >
+	radius	14
+
+	material {
+		ambient 0.5
+		diffuse 1
+		refractive 1.1
+	}
+
+}
+
+//red sphere
+sphere {
+
+	origin	< 30, 10, -55 >
+	radius	14
+
+	material {
+		ambient 0.5
+		diffuse 1
+		refractive 1.1
+	}
+
+}
+
+// light in front
+light {
+	location <40, 40, 0>
+	color <1,1,1>
+	intensity 1
+	}
+
+
+// light in the back
+light {
+	location <-10, 40, -80>
+	color <0.8, 0.2, 0.2>
+	intensity 0.2
+}
